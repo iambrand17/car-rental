@@ -1,3 +1,7 @@
+import java.awt.*;
+import java.util.ArrayList;
+import java.util.List;
+
 class car{
     private String carId;
     private String brand;
@@ -38,22 +42,78 @@ class car{
     }
 }
 class customer{
-    private String coustomerID;
+    private String customerID;
     private  String name;
 
-    public customer (String coustomerID,String name){
-        this.coustomerID=coustomerID;
+    public customer (String customerID,String name){
+        this.customerID=customerID;
         this.name=name;
 
     }
-    public String getCoustomerID(){
-        return  coustomerID;
+    public String getCustomerID(){
+        return  customerID;
     }
     public String getName(){
         return name;
     }
 }
 
-class Retal{
+class Rentals{
+    private  car car;
+    private customer customer;
 
-}
+    private int days;
+
+
+    public Rentals(car car,customer customer,int days){
+        this.car=car;
+        this.customer= customer;
+        this.days=days;
+    }
+
+    public car getCar(){
+        return car;
+    }
+    public customer getCustomer(){
+        return customer;
+    }
+    public int getDays(){
+        return days;
+    }
+
+  }
+  class CarReantalSystem{
+    private List<car> cars;
+    private List<customer> customers;
+  private List<Rentals> rental;
+
+  public CarReantalSystem(){
+      cars=new ArrayList<>();
+      customers=new ArrayList<>();
+      rental=new ArrayList<>();
+
+  }
+
+  public void addCar(car car){
+      cars.add(car);
+  }
+  public void addCustomer(customer customer){
+      customers.add(customer);
+
+  }
+  public void rentCar(car car,customer customer,int days){
+      if (car.isAvailabal()){
+          car.rent();
+          rental.add(new Rentals(car,customer,days));
+      }else {
+          System.out.println("car is not avilabale for rent");
+      }
+  }
+  public void retunCar(car car){
+      car.returnCar();
+      Rentals rentalToRemove=null;
+      for (Rentals rental:rental);
+
+  }
+  }
+

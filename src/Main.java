@@ -106,7 +106,7 @@ class Rentals{
           car.rent();
           rental.add(new Rentals(car,customer,days));
       }else {
-          System.out.println("car is not avilabale for rent");
+          System.out.println("car is not avilabale for rent mo cars in ");
       }
   }
   public void retunCar(car car){

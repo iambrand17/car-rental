@@ -3,7 +3,7 @@ class car{
     private String brand;
     private String model;
     private  double basicPrisePerDay;
-    private boolean isAvailabalNumber;
+    private boolean isAvailabal;
 
 
 
